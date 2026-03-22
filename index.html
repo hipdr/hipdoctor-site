@@ -1,88 +1,295 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCXF6MYTKK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZCXF6MYTKK');
-</script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HipDoctor.com & HipDr.com – Premium Domains for Sale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HipDoctor.com + HipDr.com</title>
   <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(255,255,255,0.08);
+      --panel-strong: rgba(255,255,255,0.12);
+      --text: #edf2ff;
+      --muted: #b8c4e2;
+      --blue: #63a4ff;
+      --cyan: #62e7ff;
+      --violet: #8e7dff;
+      --gold: #ffd36e;
+      --border: rgba(255,255,255,0.14);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      color: #222;
-      padding: 2em;
-      max-width: 700px;
-      margin: auto;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(98,231,255,0.18), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(142,125,255,0.18), transparent 28%),
+        linear-gradient(180deg, #07111f 0%, #0b1630 55%, #09111e 100%);
+      color: var(--text);
+      min-height: 100vh;
     }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      border-radius: 999px;
+      filter: blur(10px);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 260px;
+      height: 260px;
+      right: -70px;
+      top: -90px;
+      background: radial-gradient(circle, rgba(99,164,255,0.45), transparent 65%);
+    }
+
+    .hero::after {
+      width: 240px;
+      height: 240px;
+      left: -60px;
+      bottom: -100px;
+      background: radial-gradient(circle, rgba(255,211,110,0.22), transparent 65%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: var(--cyan);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
     h1 {
-      font-size: 2.2em;
-      color: #007bff;
+      margin: 0;
+      font-size: clamp(42px, 7vw, 74px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 920px;
     }
-    h2 {
-      margin-top: 1.5em;
-      color: #343a40;
+
+    .gradient {
+      background: linear-gradient(90deg, #edf2ff 0%, #9ec5ff 36%, #62e7ff 68%, #ffd36e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    p {
+
+    .sub {
+      margin: 20px 0 0;
+      max-width: 850px;
+      color: var(--muted);
+      font-size: clamp(18px, 2.5vw, 24px);
+      line-height: 1.55;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 26px;
+      margin-top: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2, .card h3 {
+      margin: 0 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: white;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 17px;
+    }
+
+    .list strong { color: white; }
+
+    .offer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      margin-top: 28px;
+      padding: 22px 24px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(99,164,255,0.14), rgba(255,211,110,0.10));
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .offer p {
+      margin: 0;
+      color: var(--muted);
       line-height: 1.6;
+      font-size: 17px;
     }
-    .highlight {
-      font-weight: bold;
-      color: #28a745;
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 22px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: #09111e;
+      background: linear-gradient(90deg, var(--cyan), var(--gold));
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      box-shadow: 0 10px 30px rgba(98,231,255,0.22);
     }
-    .box {
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 1.5em;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-top: 2em;
+
+    .footer {
+      margin-top: 22px;
+      color: #90a0c3;
+      font-size: 14px;
     }
-    .email {
-      font-weight: bold;
-      font-size: 1.1em;
-      color: #dc3545;
-    }
-    footer {
-      margin-top: 2em;
-      font-size: 0.9em;
-      color: #666;
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .offer {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero { padding: 22px; }
+      .card { padding: 20px; }
     }
   </style>
 </head>
 <body>
-  <h1>HipDoctor.com + HipDr.com</h1>
-  <h2>Now Available as a Matched Premium Domain Pair</h2>
-  <p>
-    If you're a <span class="highlight">hip specialist, orthopedic surgeon</span>, or <span class="highlight">medical brand</span> focused on joint health,
-    this is your chance to own the most intuitive and credible domain name in your field.
-  </p>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Premium orthopedic domain package</div>
+      <h1><span class="gradient">HipDoctor.com</span> + <span class="gradient">HipDr.com</span></h1>
+      <p class="sub">
+        Two intuitive, authority-building domains offered together as a rare matched set for a hip specialist,
+        orthopedic surgeon, medical practice, or strategic health brand.
+      </p>
 
-  <div class="box">
-    <h2>Why This Domain Pair Matters</h2>
-    <ul>
-      <li><strong>Instant trust</strong> – Perfect for patient referrals and word-of-mouth.</li>
-      <li><strong>Dual spelling coverage</strong> – Whether they type “hipdoctor” or “hipdr,” they’ll find you.</li>
-      <li><strong>Brandable, searchable, powerful</strong> – Ideal for SEO, ads, and long-term growth.</li>
-      <li><strong>One-of-a-kind asset</strong> – These domains are rare, memorable, and timeless.</li>
-    </ul>
-  </div>
+      <div class="hero-grid">
+        <article class="card">
+          <h2>Why this pair stands out</h2>
+          <ul class="list">
+            <li><strong>Instant credibility</strong> for referrals, direct navigation, and word-of-mouth.</li>
+            <li><strong>Dual spelling capture</strong> whether people type “hipdoctor” or “hipdr.”</li>
+            <li><strong>High recall value</strong> that is easy to hear, remember, and share.</li>
+            <li><strong>Flexible upside</strong> for practice branding, ads, redirects, landing pages, or acquisition defense.</li>
+          </ul>
 
-  <h2>Inquire or Make an Offer</h2>
-  <p>
-    This domain set is being offered as a package. Serious inquiries only.  
-    Email: <span class="email">info@hipdoctor.com</span>
-  </p>
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>Memorable</strong>
+              <span>Clear, human, brandable wording with immediate category relevance.</span>
+            </div>
+            <div class="stat">
+              <strong>Defensible</strong>
+              <span>Own both the full and abbreviated version as one coordinated asset.</span>
+            </div>
+            <div class="stat">
+              <strong>Search-friendly</strong>
+              <span>Strong match with how real patients and buyers naturally think and type.</span>
+            </div>
+            <div class="stat">
+              <strong>Scarce</strong>
+              <span>Matched medical domains this intuitive do not surface often.</span>
+            </div>
+          </div>
+        </article>
 
-  <footer>
-    © 2025 HipDoctor Domains. All rights reserved.
-  </footer>
+        <aside class="card">
+          <h3>Ideal buyer</h3>
+          <ul class="list">
+            <li>Hip resurfacing or replacement specialist</li>
+            <li>Orthopedic surgery group</li>
+            <li>Joint-health clinic or brand</li>
+            <li>Healthcare marketing roll-up</li>
+          </ul>
+        </aside>
+      </div>
+
+      <section class="offer">
+        <div>
+          <h3 style="margin:0 0 8px; font-size: 30px; letter-spacing:-0.03em;">Inquire or make an offer</h3>
+          <p>
+            This domain pair is being offered together as a package. Serious inquiries only.
+            Contact: <strong style="color:white;">info@hipdoctor.com</strong>
+          </p>
+        </div>
+        <a class="button" href="mailto:info@hipdoctor.com">Email info@hipdoctor.com</a>
+      </section>
+    </section>
+
+    <div class="footer">© 2026 HipDoctor Domains. All rights reserved.</div>
+  </main>
 </body>
 </html>
